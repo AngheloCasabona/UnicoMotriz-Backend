@@ -15,19 +15,22 @@ public class Mecanico {
     private String TCorreo;
     @Column(name = "TClave", length = 50, nullable = false)
     private String TClave;
+    /*
     @ManyToOne
             @JoinColumn(name = "CTaller")
-    Taller taller;
+    */
+    @Column(name = "CTaller", length = 10, nullable = false)
+    private String CTaller;
 
     public Mecanico() {
     }
 
-    public Mecanico(int CMecanico, String NMecanico, String TCorreo, String TClave, Taller taller) {
+    public Mecanico(int CMecanico, String NMecanico, String TCorreo, String TClave, String CTaller) {
         this.CMecanico = CMecanico;
         this.NMecanico = NMecanico;
         this.TCorreo = TCorreo;
         this.TClave = TClave;
-        this.taller = taller;
+        this.CTaller = CTaller;
     }
 
     public int getCMecanico() {
@@ -62,11 +65,11 @@ public class Mecanico {
         this.TClave = TClave;
     }
 
-    public Taller getTaller() {
-        return taller;
+    public String getCTaller() {
+        return CTaller;
     }
 
-    public void setTaller(Taller taller) {
-        this.taller = taller;
+    public void setCTaller(String CTaller) {
+        this.CTaller = CTaller;
     }
 }
