@@ -8,6 +8,7 @@ import javax.persistence.*;
 public class Taller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CTaller")
 private int id;
     @Column(name = "NTaller",length = 45,nullable = false)
 private String NTaller;
