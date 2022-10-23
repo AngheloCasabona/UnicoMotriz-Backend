@@ -9,36 +9,52 @@ public class Taller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CTaller")
-private int id;
-    @Column(name = "NTaller",length = 45,nullable = false)
-private String NTaller;
-    @Column(name = "TDireccion",length = 35,nullable = false)
-private String TDireccion;
-    @Column(name = "Cruc",length = 35,nullable = false)
-private String Cruc;
+    private int idTaller;
+    @Column(name = "NTaller",length = 50,nullable = false)
+    private String NTaller;
+    @Column(name = "TDireccion",length = 50,nullable = false)
+    private String TDireccion;
+    @Column(name = "Cruc",length = 11,nullable = false)
+    private int Cruc;
 
-public Taller(){}
+    public Taller(){}
 
-    public Taller(int id, String NTaller, String TDireccion, String cruc) {
-        this.id = id;
+    public Taller(int idTaller, String NTaller, String TDireccion, int Cruc) {
+        this.idTaller = idTaller;
         this.NTaller = NTaller;
         this.TDireccion = TDireccion;
-        this.Cruc = cruc;
+        this.Cruc = Cruc;
     }
 
-    public int getId() {     return id;    }
+    public int getIdTaller() {
+        return idTaller;
+    }
 
-    public void setId(int id) {        this.id = id;    }
+    public void setIdTaller(int idTaller) {
+        this.idTaller = idTaller;
+    }
 
-    public String getNTaller() {        return NTaller;    }
+    public String getNTaller() {
+        return NTaller;
+    }
 
-    public void setNTaller(String NTaller) {        this.NTaller = NTaller;    }
+    public void setNTaller(String NTaller) {
+        this.NTaller = NTaller;
+    }
 
-    public String getTDireccion() {        return TDireccion;    }
+    public String getTDireccion() {
+        return TDireccion;
+    }
 
-    public void setTDireccion(String TDireccion) {        this.TDireccion = TDireccion;    }
+    public void setTDireccion(String TDireccion) {
+        this.TDireccion = TDireccion;
+    }
 
-    public String getCruc() {        return Cruc;    }
+    public int getCruc() {
+        return Cruc;
+    }
 
-    public void setCruc(String cruc) {       this.Cruc = cruc;    }
+    public void setCruc(int Cruc) {
+        this.Cruc = Cruc;
+    }
 }
