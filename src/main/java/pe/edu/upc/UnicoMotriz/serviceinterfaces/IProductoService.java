@@ -7,5 +7,8 @@ import java.util.List;
 public interface IProductoService {
     public void insert(Producto Producto);
     List<Producto>list();
+    public void delete(int CProducto);
+
+    List<Producto> search(String NProducto);
 
 }
