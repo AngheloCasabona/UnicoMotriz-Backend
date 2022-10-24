@@ -27,4 +27,9 @@ public class FacturaServiceImpl implements IFacturaService {
     public void delete(int idFactura) {
         fR.deleteById(idFactura);
     }
+
+    @Override
+    public List<Factura> findDate(String DFecha) {
+        return fR.findDate(DFecha);
+    }
 }
