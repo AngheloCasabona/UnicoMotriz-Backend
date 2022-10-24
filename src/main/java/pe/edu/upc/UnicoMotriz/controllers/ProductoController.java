@@ -23,7 +23,6 @@ public class ProductoController {
         pService.delete(id);
     }
 
-
     @PutMapping
     public void modificar(@RequestBody Producto p)
     { pService.insert(p);}
