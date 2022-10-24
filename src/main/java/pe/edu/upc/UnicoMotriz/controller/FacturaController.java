@@ -21,5 +21,7 @@ public class FacturaController {
     @GetMapping
     public List<Factura>list() {return fService.list();}
 
+    @PutMapping
+    public void modify(@RequestBody Factura f){fService.insert(f);}
 
 }
