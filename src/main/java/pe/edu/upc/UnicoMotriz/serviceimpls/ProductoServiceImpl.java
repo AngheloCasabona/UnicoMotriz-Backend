@@ -17,5 +17,14 @@ public class ProductoServiceImpl implements IProductoService {
 
     @Override
     public List<Producto>list(){return fR.findAll();}
+    @Override
+    public void delete(int CProducto) {
+        fR.deleteById(CProducto);
+    }
+
+    @Override
+    public List<Producto> search(String NProducto) {
+        return fR.search(NProducto);
+    }
 
 }
