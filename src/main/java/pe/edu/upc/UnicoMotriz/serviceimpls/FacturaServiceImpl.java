@@ -3,7 +3,6 @@ package pe.edu.upc.UnicoMotriz.serviceimpls;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.UnicoMotriz.entities.Factura;
-import pe.edu.upc.UnicoMotriz.entities.Mecanico;
 import pe.edu.upc.UnicoMotriz.repositories.IFacturaRepository;
 import pe.edu.upc.UnicoMotriz.serviceinterfaces.IFacturaService;
 
@@ -25,4 +24,7 @@ public class FacturaServiceImpl implements IFacturaService {
         return Optional.of(fR.findById(idFactura).orElse(new Factura()));
     }
 
+    public void delete(int idFactura) {
+        fR.deleteById(idFactura);
+    }
 }

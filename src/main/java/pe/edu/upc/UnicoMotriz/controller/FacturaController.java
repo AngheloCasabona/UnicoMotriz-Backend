@@ -24,4 +24,6 @@ public class FacturaController {
     @PutMapping
     public void modify(@RequestBody Factura f){fService.insert(f);}
 
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id")Integer id){fService.delete(id);}
 }

@@ -12,4 +12,5 @@ public interface IFacturaService {
 
     public Optional<Factura> listId(int idFactura);
 
+    public void delete(int idFactura);
 }
