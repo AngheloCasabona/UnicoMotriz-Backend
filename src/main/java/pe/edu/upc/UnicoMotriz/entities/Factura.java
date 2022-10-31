@@ -8,10 +8,11 @@ public class Factura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
+
     private int CFactura;
     @Column(name = "DFecha",length = 45,nullable = false)
     private String DFecha;
- @Column(name = "Monto",length = 35,nullable = false)
+    @Column(name = "Monto",length = 35,nullable = false)
     private String Monto;
 
 
