@@ -9,7 +9,7 @@ public class Taller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CTaller")
-    private int idTaller;
+    private int CTaller;
     @Column(name = "NTaller",length = 50,nullable = false)
     private String NTaller;
     @Column(name = "TDireccion",length = 50,nullable = false)
@@ -19,19 +19,19 @@ public class Taller {
 
     public Taller(){}
 
-    public Taller(int idTaller, String NTaller, String TDireccion, int Cruc) {
-        this.idTaller = idTaller;
+    public Taller(int CTaller, String NTaller, String TDireccion, int Cruc) {
+        this.CTaller = CTaller;
         this.NTaller = NTaller;
         this.TDireccion = TDireccion;
         this.Cruc = Cruc;
     }
 
-    public int getIdTaller() {
-        return idTaller;
+    public int getCTaller() {
+        return CTaller;
     }
 
-    public void setIdTaller(int idTaller) {
-        this.idTaller = idTaller;
+    public void setCTaller(int CTaller) {
+        this.CTaller = CTaller;
     }
 
     public String getNTaller() {

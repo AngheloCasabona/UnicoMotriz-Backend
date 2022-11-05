@@ -19,13 +19,13 @@ public class TallerServiceImpl implements ITallerService {
     public List<Taller> list(){return tR.findAll();}
 
     @Override
-    public void delete(int idTaller) {
-        tR.deleteById(idTaller);
+    public void delete(int CTaller) {
+        tR.deleteById(CTaller);
     }
 
     @Override
-    public Optional<Taller> listId(int idTaller) {
-        return Optional.of(tR.findById(idTaller).orElse(new Taller()));
+    public Optional<Taller> listId(int CTaller) {
+        return Optional.of(tR.findById(CTaller).orElse(new Taller()));
     }
 
     @Override
