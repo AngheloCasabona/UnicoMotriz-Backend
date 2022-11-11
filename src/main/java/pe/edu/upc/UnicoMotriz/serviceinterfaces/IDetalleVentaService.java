@@ -6,13 +6,17 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IDetalleVentaService {
-    public void insert (DetalleVenta DVenta);
+    public void insert (DetalleVenta dventa);
 
     List<DetalleVenta>list();
 
-    public Optional<DetalleVenta>listId(int idCCliente);
+    public Optional<DetalleVenta>listId(int ccliente);
 
-    public void delete (int idCCliente);
+    public void delete (int ccliente);
 
-    List<DetalleVenta>findCliente(int CCliente);
+    List<DetalleVenta>findCliente(int ccliente);
+
+    List<DetalleVenta>findTaller(int ctaller);
+
+    List<DetalleVenta>findFactura(int cfactura);
 }

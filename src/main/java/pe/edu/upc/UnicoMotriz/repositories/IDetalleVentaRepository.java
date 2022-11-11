@@ -10,6 +10,12 @@ import java.util.List;
 
 @Repository
 public interface IDetalleVentaRepository extends JpaRepository<DetalleVenta,Integer> {
-    @Query("from DetalleVenta dv where dv.CCliente in :CCliente")
-    List<DetalleVenta> findCliente(@Param("CCliente")int CCliente);
+    @Query("from DetalleVenta dv where dv.ccliente in :ccliente")
+    List<DetalleVenta> findCliente(@Param("ccliente")int ccliente);
+
+    @Query("from DetalleVenta dv where dv.ctaller in :ctaller")
+    List<DetalleVenta> findTaller(@Param("ctaller")int ctaller);
+
+    @Query("from DetalleVenta dv where dv.cfactura in :cfactura")
+    List<DetalleVenta> findFactura(@Param("cfactura")int cfactura);
 }
