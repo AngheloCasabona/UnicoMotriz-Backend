@@ -10,9 +10,10 @@ public interface IFacturaService {
     public void insert(Factura factura);
     List<Factura>list();
 
-    public Optional<Factura> listId(int idFactura);
+    public Optional<Factura> listId(int cfactura);
 
-    public void delete(int idFactura);
+    public void delete(int cfactura);
 
-    List<Factura>findDate(String DFecha);
+    List<Factura>findFactura(int cfactura);
+
 }

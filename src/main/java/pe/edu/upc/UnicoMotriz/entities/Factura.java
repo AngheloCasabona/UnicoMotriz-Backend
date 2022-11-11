@@ -8,30 +8,31 @@ public class Factura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private int CFactura;
-    @Column(name = "DFecha",length = 45,nullable = false)
-    private String DFecha;
- @Column(name = "Monto",length = 35,nullable = false)
-    private String Monto;
+
+    private int cfactura;
+    @Column(name = "dfecha",length = 45,nullable = false)
+    private String dfecha;
+    @Column(name = "monto",length = 35,nullable = false)
+    private String monto;
 
 
     public Factura(){}
 
-    public Factura(int CFactura, String DFecha, String monto) {
-        this.CFactura = CFactura;
-        this.DFecha = DFecha;
-        this.Monto = monto;
+    public Factura(int cfactura, String dfecha, String monto) {
+        this.cfactura = cfactura;
+        this.dfecha = dfecha;
+        this.monto = monto;
     }
 
-    public int getCFactura() {        return CFactura;    }
+    public int getCFactura() {        return cfactura;    }
 
-    public void setCFactura(int CFactura) {        this.CFactura = CFactura;    }
+    public void setCFactura(int cfactura) {        this.cfactura = cfactura;    }
 
-    public String getDFecha() {        return DFecha;    }
+    public String getDFecha() {        return dfecha;    }
 
-    public void setDFecha(String DFecha) {        this.DFecha = DFecha;    }
+    public void setDFecha(String dfecha) {        this.dfecha = dfecha;    }
 
-    public String getMonto() {        return Monto;    }
+    public String getMonto() {        return monto;    }
 
-    public void setMonto(String monto) {        this.Monto = monto;    }
+    public void setMonto(String monto) {        this.monto = monto;    }
 }

@@ -9,6 +9,7 @@ import pe.edu.upc.UnicoMotriz.serviceinterfaces.IFacturaService;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/facturas")
@@ -32,8 +33,13 @@ public class FacturaController {
     @PostMapping("/buscar")
     public List<Factura> find(@RequestBody Factura fr)throws ParseException {
         List<Factura> listFactura;
-        fr.setDFecha(fr.getDFecha());
-        listFactura = fService.findDate(fr.getDFecha());
+        fr.setCFactura(fr.getCFactura());
+        listFactura = fService.findFactura(fr.getCFactura());
         return listFactura;
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Factura> listId(@PathVariable("id") Integer id) {
+        return fService.listId(id);
     }
 }

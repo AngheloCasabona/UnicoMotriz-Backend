@@ -20,16 +20,17 @@ public class FacturaServiceImpl implements IFacturaService {
     public List<Factura>list(){return fR.findAll();}
 
     @Override
-    public Optional<Factura> listId(int idFactura){
-        return Optional.of(fR.findById(idFactura).orElse(new Factura()));
+    public Optional<Factura> listId(int cfactura){
+        return fR.findById(cfactura);
     }
 
-    public void delete(int idFactura) {
-        fR.deleteById(idFactura);
+    public void delete(int cfactura) {
+        fR.deleteById(cfactura);
     }
 
-    @Override
-    public List<Factura> findDate(String DFecha) {
-        return fR.findDate(DFecha);
+
+    public List<Factura> findFactura(int cfactura) {
+        return fR.findFactura(cfactura);
     }
+
 }

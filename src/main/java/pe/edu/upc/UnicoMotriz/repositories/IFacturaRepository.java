@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface IFacturaRepository extends JpaRepository<Factura,Integer> {
-    @Query("from Factura f where f.DFecha like %:DFecha%")
-    List<Factura> findDate(@Param("DFecha") String DFecha);
+    @Query("from Factura f where f.cfactura in :cfactura")
+    List<Factura> findFactura(@Param("cfactura") int cfactura);
 }
