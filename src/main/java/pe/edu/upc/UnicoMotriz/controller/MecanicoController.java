@@ -7,6 +7,8 @@ import pe.edu.upc.UnicoMotriz.serviceinterfaces.IMecanicoService;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/mecanicos")
 public class MecanicoController {
@@ -32,4 +34,9 @@ public class MecanicoController {
         listMecanicos = mService.findName(mr.getNMecanico());
         return listMecanicos;
     }
+    @GetMapping("/{id}")
+    public Optional<Mecanico> listId(@PathVariable("id") Integer id) {
+        return mService.listId(id);
+    }
+
 }

@@ -8,10 +8,10 @@ import java.util.Optional;
 public interface ITallerService {
     public void insert(Taller taller);
     List<Taller>list();
-    public void delete(int idTaller);
+    public void delete(int ctaller);
 
-    public Optional<Taller>listId(int idTaller);
+    public Optional<Taller>listId(int ctaller);
 
-    List<Taller>findName(String NTaller);
+    List<Taller>findName(String ntaller);
 
 }

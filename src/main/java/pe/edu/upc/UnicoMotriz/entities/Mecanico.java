@@ -1,10 +1,19 @@
 package pe.edu.upc.UnicoMotriz.entities;
 
 import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "Mecanico")
 public class Mecanico {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CMecanico")
@@ -15,24 +24,26 @@ public class Mecanico {
     private String TCorreo;
     @Column(name = "TClave", length = 50, nullable = false)
     private String TClave;
-    /*
+
     @ManyToOne
-            @JoinColumn(name = "CTaller")
-    */
-    @Column(name = "CTaller", length = 10, nullable = false)
-    private String CTaller;
 
-    public Mecanico() {
-    }
+    @JoinColumn(name = "ctaller", nullable = false)
+    private Taller ctaller;
 
-    public Mecanico(int CMecanico, String NMecanico, String TCorreo, String TClave, String CTaller) {
+
+
+    public Mecanico(int CMecanico, String NMecanico, String TCorreo, String TClave, Taller ctaller) {
         this.CMecanico = CMecanico;
         this.NMecanico = NMecanico;
         this.TCorreo = TCorreo;
         this.TClave = TClave;
-        this.CTaller = CTaller;
+        this.ctaller = ctaller;
     }
+    public Mecanico() {
+        super();
+        // TODO Auto-generated constructor stub
 
+    }
     public int getCMecanico() {
         return CMecanico;
     }
@@ -65,11 +76,11 @@ public class Mecanico {
         this.TClave = TClave;
     }
 
-    public String getCTaller() {
-        return CTaller;
+    public Taller getTaller() {
+        return ctaller;
     }
 
-    public void setCTaller(String CTaller) {
-        this.CTaller = CTaller;
+    public void setTaller(Taller ctaller) {
+        this.ctaller = ctaller;
     }
 }

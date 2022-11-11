@@ -2,11 +2,14 @@ package pe.edu.upc.UnicoMotriz.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import pe.edu.upc.UnicoMotriz.entities.Taller;
 import pe.edu.upc.UnicoMotriz.serviceinterfaces.ITallerService;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/talleres")
 public class TallerController {
@@ -28,9 +31,12 @@ public class TallerController {
     @PostMapping("/buscar")
     public List<Taller>find(@RequestBody Taller tr)throws ParseException{
         List<Taller> listTaller;
-        tr.setNTaller(tr.getNTaller());
-        listTaller=tService.findName((tr.getNTaller()));
+        tr.setntaller(tr.getntaller());
+        listTaller=tService.findName((tr.getntaller()));
         return listTaller;
     }
-
+    @GetMapping("/{id}")
+    public Optional<Taller> listId(@PathVariable("id") Integer id) {
+        return tService.listId(id);
+    }
 }
