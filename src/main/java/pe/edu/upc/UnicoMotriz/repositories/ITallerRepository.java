@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface ITallerRepository extends JpaRepository<Taller,Integer> {
-    @Query("from Taller t where t.NTaller like %:NTaller%")
-    List<Taller>findName(@Param("NTaller")String NTaller);
+    @Query("from Taller t where t.ntaller like %:ntaller%")
+    List<Taller>findName(@Param("ntaller")String ntaller);
 
 }

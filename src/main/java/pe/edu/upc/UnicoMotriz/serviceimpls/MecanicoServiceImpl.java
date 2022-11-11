@@ -19,18 +19,16 @@ public class MecanicoServiceImpl implements IMecanicoService {
         mR.save(mecanico);
     }
 
-    @Override
-    public List<Mecanico> list() {
-        return mR.findAll();
-    }
 
     @Override
     public void delete(int idMecanico){ mR.deleteById(idMecanico);}
-
     @Override
     public Optional<Mecanico> listId(int idMecanico){
         return Optional.of(mR.findById(idMecanico).orElse(new Mecanico()));
     }
+    @Override
+    public List<Mecanico> list() {        return mR.findAll();    }
+
 
     @Override
     public List<Mecanico> findName(String nameMecanico){ return mR.findName(nameMecanico);}

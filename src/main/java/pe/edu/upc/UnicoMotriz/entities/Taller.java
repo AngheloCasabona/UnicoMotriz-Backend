@@ -1,60 +1,69 @@
 package pe.edu.upc.UnicoMotriz.entities;
 
 import javax.persistence.*;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 @Entity
-@Table(name = "Taller")
+@Table(name = "taller")
 
 public class Taller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CTaller")
-    private int idTaller;
-    @Column(name = "NTaller",length = 50,nullable = false)
-    private String NTaller;
-    @Column(name = "TDireccion",length = 50,nullable = false)
-    private String TDireccion;
-    @Column(name = "Cruc",length = 11,nullable = false)
-    private int Cruc;
+    @Column(name = "ctaller")
+    private int ctaller;
+    @Column(name = "ntaller",length = 50,nullable = false)
+    private String ntaller;
+    @Column(name = "tdireccion",length = 50,nullable = false)
+    private String tdireccion;
+    @Column(name = "cruc",length = 11,nullable = false)
+    private int cruc;
+
+
 
     public Taller(){}
 
-    public Taller(int idTaller, String NTaller, String TDireccion, int Cruc) {
-        this.idTaller = idTaller;
-        this.NTaller = NTaller;
-        this.TDireccion = TDireccion;
-        this.Cruc = Cruc;
+    public Taller(int ctaller, String ntaller, String tdireccion, int cruc) {
+        this.ctaller = ctaller;
+        this.ntaller = ntaller;
+        this.tdireccion = tdireccion;
+        this.cruc = cruc;
     }
 
     public int getIdTaller() {
-        return idTaller;
+        return ctaller;
     }
 
-    public void setIdTaller(int idTaller) {
-        this.idTaller = idTaller;
+    public void setctaller(int ctaller) {
+        this.ctaller = ctaller;
     }
 
-    public String getNTaller() {
-        return NTaller;
+    public String getntaller() {
+        return ntaller;
     }
 
-    public void setNTaller(String NTaller) {
-        this.NTaller = NTaller;
+    public void setntaller(String ntaller) {
+        this.ntaller = ntaller;
     }
 
-    public String getTDireccion() {
-        return TDireccion;
+    public String gettdireccion() {
+        return tdireccion;
     }
 
-    public void setTDireccion(String TDireccion) {
-        this.TDireccion = TDireccion;
+    public void settdireccion(String tdireccion) {
+        this.tdireccion = tdireccion;
     }
 
-    public int getCruc() {
-        return Cruc;
+    public int getcruc() {
+        return cruc;
     }
 
-    public void setCruc(int Cruc) {
-        this.Cruc = Cruc;
+    public void setcruc(int cruc) {
+        this.cruc = cruc;
     }
 }
