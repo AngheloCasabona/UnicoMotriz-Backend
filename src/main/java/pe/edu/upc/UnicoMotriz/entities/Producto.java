@@ -2,6 +2,7 @@ package pe.edu.upc.UnicoMotriz.entities;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "Producto")
 public class Producto {

@@ -6,6 +6,8 @@ import pe.edu.upc.UnicoMotriz.entities.Producto;
 import pe.edu.upc.UnicoMotriz.serviceinterfaces.IProductoService;
 
 import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/productos")
 public class ProductoController {
@@ -29,7 +31,10 @@ public class ProductoController {
 
     @PostMapping("/buscar")
     public List<Producto> buscar(@RequestBody Producto p){
-        return  pService.search(p.getNProducto());
+        return pService.search(p.getNProducto());
     }
+
+    @GetMapping("/{id}")
+    public Optional<Producto> listarId(@PathVariable("id") Integer id) { return pService.listarId(id); }
 
 }
