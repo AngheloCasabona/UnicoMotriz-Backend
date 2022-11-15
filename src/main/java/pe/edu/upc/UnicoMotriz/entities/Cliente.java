@@ -7,75 +7,75 @@ import javax.persistence.*;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int CCliente;
-    @Column(name = "NCliente", length = 50, nullable = false)
-    private String NCliente;
-    @Column(name = "TCorreo", length = 50, nullable = false)
-    private String TCorreo;
-    @Column(name = "TClave", length = 50, nullable = false)
-    private String TClave;
-    @Column(name = "TTelefono", length = 9, nullable = false)
-    private String TTelefono;
-    @Column(name = "CRuc", length = 11, nullable = false)
-    private int CRuc;
+    private int ccliente;
+    @Column(name = "ncliente", length = 50, nullable = false)
+    private String ncliente;
+    @Column(name = "tcorreo", length = 50, nullable = false)
+    private String tcorreo;
+    @Column(name = "tclave", length = 50, nullable = false)
+    private String tclave;
+    @Column(name = "ttelefono", length = 9, nullable = false)
+    private String ttelefono;
+    @Column(name = "cruc", length = 11, nullable = false)
+    private String cruc;
 
     public Cliente() {
     }
 
-    public Cliente(int CCliente, String NCliente, String TCorreo, String TClave, String TTelefono, int CRuc) {
-        this.CCliente = CCliente;
-        this.NCliente = NCliente;
-        this.TCorreo = TCorreo;
-        this.TClave = TClave;
-        this.TTelefono = TTelefono;
-        this.CRuc = CRuc;
+    public Cliente(int ccliente, String ncliente, String tcorreo, String tclave, String ttelefono, String cruc) {
+        this.ccliente = ccliente;
+        this.ncliente = ncliente;
+        this.tcorreo = tcorreo;
+        this.tclave = tclave;
+        this.ttelefono = ttelefono;
+        this.cruc = cruc;
     }
 
     public int getCCliente() {
-        return CCliente;
+        return ccliente;
     }
 
-    public void setCCliente(int CCliente) {
-        this.CCliente = CCliente;
+    public void setCCliente(int ccliente) {
+        this.ccliente = ccliente;
     }
 
     public String getNCliente() {
-        return NCliente;
+        return ncliente;
     }
 
-    public void setNCliente(String NCliente) {
-        this.NCliente = NCliente;
+    public void setNCliente(String ncliente) {
+        this.ncliente = ncliente;
     }
 
     public String getTCorreo() {
-        return TCorreo;
+        return tcorreo;
     }
 
-    public void setTCorreo(String TCorreo) {
-        this.TCorreo = TCorreo;
+    public void setTCorreo(String tcorreo) {
+        this.tcorreo = tcorreo;
     }
 
     public String getTClave() {
-        return TClave;
+        return tclave;
     }
 
-    public void setTClave(String TClave) {
-        this.TClave = TClave;
+    public void setTClave(String tclave) {
+        this.tclave = tclave;
     }
 
     public String getTTelefono() {
-        return TTelefono;
+        return ttelefono;
     }
 
-    public void setTTelefono(String TTelefono) {
-        this.TTelefono = TTelefono;
+    public void setTTelefono(String ttelefono) {
+        this.ttelefono = ttelefono;
     }
 
-    public int getCRuc() {
-        return CRuc;
+    public String getCRuc() {
+        return cruc;
     }
 
-    public void setCRuc(int CRuc) {
-        this.CRuc = CRuc;
+    public void setCRuc(String cruc) {
+        this.cruc = cruc;
     }
 }
