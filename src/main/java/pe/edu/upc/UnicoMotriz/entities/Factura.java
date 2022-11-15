@@ -7,8 +7,6 @@ import javax.persistence.*;
 public class Factura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-
     private int cfactura;
     @Column(name = "dfecha",length = 45,nullable = false)
     private String dfecha;

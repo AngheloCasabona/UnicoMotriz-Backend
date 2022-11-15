@@ -2,7 +2,6 @@ package pe.edu.upc.UnicoMotriz.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import pe.edu.upc.UnicoMotriz.entities.Taller;
 import pe.edu.upc.UnicoMotriz.serviceinterfaces.ITallerService;
 
@@ -31,8 +30,8 @@ public class TallerController {
     @PostMapping("/buscar")
     public List<Taller>find(@RequestBody Taller tr)throws ParseException{
         List<Taller> listTaller;
-        tr.setntaller(tr.getntaller());
-        listTaller=tService.findName((tr.getntaller()));
+        tr.setCtaller(tr.getCtaller());
+        listTaller=tService.findName(tr.getNtaller());
         return listTaller;
     }
     @GetMapping("/{id}")
