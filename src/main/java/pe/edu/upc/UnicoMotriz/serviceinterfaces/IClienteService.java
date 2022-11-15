@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IClienteService {
-    public void insert(Cliente cliente);
+    public void insert(Cliente ccliente);
     List<Cliente>list();
-    public void delete(int idCliente);
-    public Optional<Cliente> listId(int idCliente);
-    List<Cliente> findName(String nameCliente);
+    public void delete(int ccliente);
+    public Optional<Cliente> listId(int ccliente);
+    List<Cliente> findName(String ncliente);
 }

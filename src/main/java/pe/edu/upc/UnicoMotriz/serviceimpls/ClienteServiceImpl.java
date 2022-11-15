@@ -24,14 +24,14 @@ public class ClienteServiceImpl implements IClienteService {
     }
 
     @Override
-    public void delete(int idCliente){ cR.deleteById(idCliente);}
+    public void delete(int ccliente){ cR.deleteById(ccliente);}
 
     @Override
-    public Optional<Cliente> listId(int idCliente){
-        return Optional.of(cR.findById(idCliente).orElse(new Cliente()));
+    public Optional<Cliente> listId(int ccliente){
+        return cR.findById(ccliente);
     }
 
     @Override
-    public List<Cliente> findName(String nameCliente){ return cR.findName(nameCliente);}
+    public List<Cliente> findName(String ncliente){ return cR.findName(ncliente);}
 
 }
