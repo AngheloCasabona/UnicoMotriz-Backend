@@ -39,11 +39,15 @@ public class VehiculoController {
     public List<Vehiculo> buscar(@RequestBody Vehiculo v) throws ParseException {
 
         List<Vehiculo> listaVehiculos;
+        /*
         listaVehiculos = vService.buscarVehiculo(v.getCplaca());
         if (listaVehiculos.isEmpty()) {
 
             listaVehiculos = vService.buscarCliente(v.getCliente().getNCliente());
-        }
+        }*/
+
+        v.setCplaca(v.getCplaca());
+        listaVehiculos = vService.buscarVehiculo(v.getCplaca());
         return listaVehiculos;
 
     }
