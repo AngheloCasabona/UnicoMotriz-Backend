@@ -1,6 +1,10 @@
 package pe.edu.upc.UnicoMotriz.entities;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Vehiculo")
@@ -17,8 +21,9 @@ public class Vehiculo {
     @Column(name = "tdetalle",length = 45, nullable = false)
     private String tdetalle;
 
-    @Column(name = "dano",length = 45, nullable = false)
-    private String dano;
+    @Column(name = "dano")
+    @JsonSerialize(using = ToStringSerializer.class)
+    private LocalDate dano;
 
     @Column(name = "nmarca",length = 45, nullable = false)
     private String nmarca;
@@ -34,7 +39,7 @@ public class Vehiculo {
         super();
     }
 
-    public Vehiculo(int cvehiculo, String cplaca, String tdetalle, String dano, String nmarca, String nmodelo, Cliente cliente) {
+    public Vehiculo(int cvehiculo, String cplaca, String tdetalle, LocalDate dano, String nmarca, String nmodelo, Cliente cliente) {
         this.cvehiculo = cvehiculo;
         this.cplaca = cplaca;
         this.tdetalle = tdetalle;
@@ -68,11 +73,11 @@ public class Vehiculo {
         this.tdetalle = tdetalle;
     }
 
-    public String getDano() {
+    public LocalDate getDano() {
         return dano;
     }
 
-    public void setDano(String dano) {
+    public void setDano(LocalDate dano) {
         this.dano = dano;
     }
 
