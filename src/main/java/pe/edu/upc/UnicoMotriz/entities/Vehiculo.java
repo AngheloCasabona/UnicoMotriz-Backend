@@ -5,73 +5,91 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Vehiculo")
 public class Vehiculo {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CVehiculo",length = 45, nullable = false)
-    private int CVehiculo;
-    @Column(name = "tDetalle",length = 45, nullable = false)
-    private String tDetalle;
-    @Column(name = "dAno",length = 45, nullable = false)
-    private String dAno;
-    @Column(name = "nMarca",length = 45, nullable = false)
-    private String nMarca;
-    @Column(name = "nModelo",length = 45, nullable = false)
-    private String nModelo;
+    private int cvehiculo;
+
+    @Column(name = "cplaca",length = 7, nullable = false)
+    private String cplaca;
+
+    @Column(name = "tdetalle",length = 45, nullable = false)
+    private String tdetalle;
+
+    @Column(name = "dano",length = 45, nullable = false)
+    private String dano;
+
+    @Column(name = "nmarca",length = 45, nullable = false)
+    private String nmarca;
+
+    @Column(name = "nmodelo",length = 45, nullable = false)
+    private String nmodelo;
+
     @ManyToOne
-    @JoinColumn(name = "cliente", nullable = false)
+    @JoinColumn(name = "idCliente", nullable = false)
     private Cliente cliente;
 
     public Vehiculo() {
+        super();
     }
 
-    public Vehiculo(int CVehiculo, String tDetalle, String dAno, String nMarca, String nModelo, Cliente cliente) {
-        this.CVehiculo = CVehiculo;
-        this.tDetalle = tDetalle;
-        this.dAno = dAno;
-        this.nMarca = nMarca;
-        this.nModelo = nModelo;
+    public Vehiculo(int cvehiculo, String cplaca, String tdetalle, String dano, String nmarca, String nmodelo, Cliente cliente) {
+        this.cvehiculo = cvehiculo;
+        this.cplaca = cplaca;
+        this.tdetalle = tdetalle;
+        this.dano = dano;
+        this.nmarca = nmarca;
+        this.nmodelo = nmodelo;
         this.cliente = cliente;
     }
 
-    public int getCVehiculo() {
-        return CVehiculo;
+    public int getCvehiculo() {
+        return cvehiculo;
     }
 
-    public void setCVehiculo(int CVehiculo) {
-        this.CVehiculo = CVehiculo;
+    public void setCvehiculo(int cvehiculo) {
+        this.cvehiculo = cvehiculo;
     }
 
-    public String gettDetalle() {
-        return tDetalle;
+    public String getCplaca() {
+        return cplaca;
     }
 
-    public void settDetalle(String tDetalle) {
-        this.tDetalle = tDetalle;
+    public void setCplaca(String cplaca) {
+        this.cplaca = cplaca;
     }
 
-    public String getdAno() {
-        return dAno;
+    public String getTdetalle() {
+        return tdetalle;
     }
 
-    public void setdAno(String dAno) {
-        this.dAno = dAno;
+    public void setTdetalle(String tdetalle) {
+        this.tdetalle = tdetalle;
     }
 
-    public String getnMarca() {
-        return nMarca;
+    public String getDano() {
+        return dano;
     }
 
-    public void setnMarca(String nMarca) {
-        this.nMarca = nMarca;
+    public void setDano(String dano) {
+        this.dano = dano;
     }
 
-    public String getnModelo() {
-        return nModelo;
+    public String getNmarca() {
+        return nmarca;
     }
 
-    public void setnModelo(String nModelo) {
-        this.nModelo = nModelo;
+    public void setNmarca(String nmarca) {
+        this.nmarca = nmarca;
+    }
+
+    public String getNmodelo() {
+        return nmodelo;
+    }
+
+    public void setNmodelo(String nmodelo) {
+        this.nmodelo = nmodelo;
     }
 
     public Cliente getCliente() {

@@ -6,9 +6,15 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IVehiculoService {
-    public void insertar(Vehiculo vehiculo);
-    List<Vehiculo> listar();
+    public boolean insertar(Vehiculo vehiculo);
+
     public void eliminar(int idVehiculo);
-    public Optional<Vehiculo> listarId(int idVehiculo);
-    List<Vehiculo> encontrarNombre(String nombreVehiculo);
+
+    Optional<Vehiculo> listarId(int idVehiculo);
+
+    List<Vehiculo> listar();
+
+    List<Vehiculo> buscarCliente(String ncliente);
+
+    List<Vehiculo> buscarVehiculo(String cplaca);
 }

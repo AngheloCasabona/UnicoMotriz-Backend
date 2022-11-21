@@ -15,26 +15,42 @@ public class VehiculoController {
     private IVehiculoService vService;
 
     @PostMapping
-    public void register(@RequestBody Vehiculo m){vService.insertar(m);}
-
-    @GetMapping
-    public List<Vehiculo> list() {return vService.listar();}
+    public void registrar(@RequestBody Vehiculo v){
+        vService.insertar(v);
+    }
 
     @PutMapping
-    public void modify(@RequestBody Vehiculo m){vService.insertar(m);}
+    public void modificar(@RequestBody Vehiculo v){
+        vService.insertar(v);
+    }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer id){vService.eliminar(id);}
+    public void eliminar(@PathVariable("id") Integer id){
+        vService.eliminar(id);
+    }
+
+    @GetMapping
+    public List<Vehiculo> listar() {
+        return vService.listar();
+    }
+
 
     @PostMapping("/buscar")
-    public List<Vehiculo> find(@RequestBody Vehiculo vr)throws ParseException {
-        List<Vehiculo> listarVehiculos;
-        vr.setnMarca(vr.getnMarca());
-        listarVehiculos = vService.encontrarNombre(vr.getnMarca());
-        return listarVehiculos;
+    public List<Vehiculo> buscar(@RequestBody Vehiculo v) throws ParseException {
+
+        List<Vehiculo> listaVehiculos;
+        listaVehiculos = vService.buscarVehiculo(v.getCplaca());
+        if (listaVehiculos.isEmpty()) {
+
+            listaVehiculos = vService.buscarCliente(v.getCliente().getNCliente());
+        }
+        return listaVehiculos;
+
     }
+
     @GetMapping("/{id}")
-    public Optional<Vehiculo> listId(@PathVariable("id") Integer id) {
+    public Optional<Vehiculo> listarId(@PathVariable("id") Integer id) {
         return vService.listarId(id);
     }
+
 }
