@@ -10,6 +10,9 @@ import java.util.List;
 
 @Repository
 public interface IMecanicoRepository extends JpaRepository<Mecanico,Integer> {
-    @Query("from Mecanico m where m.NMecanico like %:NMecanico%")
-    List<Mecanico> findName(@Param("NMecanico") String NMecanico);
+    @Query("from Mecanico m where m.nmecanico like %:nmecanico%")
+    List<Mecanico> buscarMecanico (@Param("nmecanico") String nmecanico);
+
+    @Query("from Mecanico m where m.taller.ntaller like %:ntaller%")
+    List<Mecanico>buscarTaller(@Param("ntaller")String ntaller);
 }
