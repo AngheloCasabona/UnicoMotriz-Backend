@@ -13,6 +13,6 @@ public interface IClienteRepository extends JpaRepository<Cliente,Integer> {
     @Query("from Cliente m where m.ncliente like %:ncliente%")
     List<Cliente> findName(@Param("ncliente") String ncliente);
 
-    @Query(value = "select u.ncliente, u.tclave from cliente as u where length(u.tclave) < 8", nativeQuery = true)
+    @Query(value = "select * from cliente as u where length(u.tclave) < 8  order by u.ncliente asc", nativeQuery = true)
     List<Cliente>fuerzaCodigo();
 }
