@@ -2,6 +2,7 @@ package pe.edu.upc.UnicoMotriz.serviceimpls;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upc.UnicoMotriz.entities.Factura;
 import pe.edu.upc.UnicoMotriz.repositories.IFacturaRepository;
 import pe.edu.upc.UnicoMotriz.serviceinterfaces.IFacturaService;

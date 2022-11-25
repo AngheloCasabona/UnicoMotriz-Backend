@@ -40,4 +40,7 @@ public class FacturaController {
     public Optional<Factura> listId(@PathVariable("id") Integer id) {
         return fService.listId(id);
     }
+
+ //   @PostMapping("/buscarfecha") //Probar con String sino cambiar a LocalDate
+   // public List<Factura> buscarFecha(@RequestBody String fecha) { return fService.buscarFecha(fecha);}
 }

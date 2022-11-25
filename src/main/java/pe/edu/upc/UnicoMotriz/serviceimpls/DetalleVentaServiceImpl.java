@@ -2,9 +2,11 @@ package pe.edu.upc.UnicoMotriz.serviceimpls;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.edu.upc.UnicoMotriz.entities.DetalleVenta;
+import pe.edu.upc.UnicoMotriz.entities.Vehiculo;
 import pe.edu.upc.UnicoMotriz.repositories.IDetalleVentaRepository;
 import pe.edu.upc.UnicoMotriz.serviceinterfaces.IDetalleVentaService;
 
@@ -16,26 +18,38 @@ import java.util.Optional;
 public class DetalleVentaServiceImpl implements IDetalleVentaService{
     @Autowired
     private IDetalleVentaRepository dvR;
+
     @Override
-    public void insert(DetalleVenta dventa){dvR.save(dventa);}
+    @Transactional
+    public boolean insert(DetalleVenta dventa) {
+        DetalleVenta objDetalle = dvR.save(dventa);
+        if (objDetalle == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     @Override
     public List<DetalleVenta>list(){return dvR.findAll();}
 
-    public void delete (int ccliente){dvR.deleteById(ccliente);}
-
-    public List<DetalleVenta>findCliente(int ccliente){return dvR.findCliente(ccliente);}
+    @Transactional
+    public void delete (int cdetalle){dvR.deleteById(cdetalle);}
 
     @Override
-    public Optional<DetalleVenta> listId(int ccliente)
-    { return dvR.findById(ccliente);}
+    public Optional<DetalleVenta> listId(int cdetalle)
+    { return dvR.findById(cdetalle);}
 
-  @Override
-    public List<DetalleVenta>findTaller(int ctaller){
-        return dvR.findTaller(ctaller);
+    @Override
+    public List<DetalleVenta>findCliente(String cliente){return dvR.findCliente(cliente);}
+  /*  @Override
+    public List<DetalleVenta>buscarClientenombre(String ncliente){return dvR.findCliente(ncliente);}
+   @Override
+    public List<DetalleVenta>findTaller(String ntaller){
+        return dvR.findTaller(ntaller);
   }
     @Override
     public List<DetalleVenta>findFactura(int cfactura){
         return dvR.findFactura(cfactura);
-    }
+    }*/
 }

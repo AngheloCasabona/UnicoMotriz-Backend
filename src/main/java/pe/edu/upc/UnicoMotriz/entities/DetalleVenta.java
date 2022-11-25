@@ -9,39 +9,73 @@ import javax.persistence.*;
 public class DetalleVenta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int cdetalle;
 
-    @Column(name = "ccliente",length = 45, nullable = false)
-    private int ccliente;
+    @ManyToOne
+    @JoinColumn(name = "ccliente", nullable = false)
+    private Cliente cliente;
 
-    @Column(name = "ctaller",length = 45, nullable = false)
-    private int ctaller;
+    @ManyToOne
+    @JoinColumn(name = "ctaller", nullable = false)
+    private Taller taller;
 
-    @Column(name = "cfactura",length = 45, nullable = false)
-    private int cfactura;
+    @ManyToOne
+    @JoinColumn(name = "cfactura", nullable = false)
+    private Factura cfactura;
 
     @Column(name = "tdetalle",length = 45, nullable = false)
     private String tdetalle;
 
-    public DetalleVenta(){}
+    public DetalleVenta(){super();}
 
-    public  DetalleVenta(int ccliente, int ctaller, int cfactura, String tdetalle){
-        this.ccliente=ccliente;
-        this.ctaller=ctaller;
+
+    public  DetalleVenta(int cdetalle, Cliente cliente, Taller taller, Factura cfactura, String tdetalle){
+        this.cdetalle=cdetalle;
+        this.cliente=cliente;
+        this.taller=taller;
         this.cfactura=cfactura;
         this.tdetalle=tdetalle;
     }
+    public int getCdetalle() {
+        return cdetalle;
+    }
 
-    public int getCCliente(){return ccliente;}
-    public void setCCliente(int ccliente){this.ccliente=ccliente;}
+    public void setCdetalle(int cdetalle) {
+        this.cdetalle = cdetalle;
+    }
 
-    public int getCTaller(){return ctaller;}
-    public void setCTaller(int ctaller){this.ctaller=ctaller;}
+    public Cliente getCliente() {
+        return cliente;
+    }
 
-    public int getCFactura(){return cfactura;}
-    public void setCFactura(int CFactura){this.cfactura=cfactura;}
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
-    public String getTDetalle(){return tdetalle;}
-    public  void setTDetalle(String tdetalle){this.tdetalle=tdetalle;}
+    public Taller getTaller() {
+        return taller;
+    }
+
+    public void setTaller(Taller taller) {
+        this.taller = taller;
+    }
+
+    public Factura getCfactura() {
+        return cfactura;
+    }
+
+    public void setCfactura(Factura cfactura) {
+        this.cfactura = cfactura;
+    }
+
+    public String getTdetalle() {
+        return tdetalle;
+    }
+
+    public void setTdetalle(String tdetalle) {
+        this.tdetalle = tdetalle;
+    }
+
 }
 
 

@@ -32,11 +32,16 @@ public class DetalleVentaController {
 
     @PostMapping("/buscar")
     public List<DetalleVenta>find(@RequestBody DetalleVenta dventa)throws ParseException{
-        List<DetalleVenta>listDetalleVenta;
-        dventa.setCCliente(dventa.getCCliente());
-        listDetalleVenta=dvService.findCliente(dventa.getCCliente());
-        return listDetalleVenta;
+       List<DetalleVenta>listaDetalle;
+        dventa.setCdetalle(dventa.getCdetalle());
+        listaDetalle = dvService.findCliente(dventa.getTdetalle());
+        return listaDetalle;
     }
     @GetMapping("/{id}")
     public Optional <DetalleVenta> listId(@PathVariable("id")Integer id){return dvService.listId(id);}
+
+  /*  @PostMapping("/buscarcliente")
+    public List<DetalleVenta> buscarCliente(@RequestBody String nombre) throws ParseException {
+        return dvService.buscarClientenombre(nombre);
+    }*/
 }
