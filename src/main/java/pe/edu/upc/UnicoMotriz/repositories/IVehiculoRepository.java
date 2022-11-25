@@ -16,4 +16,6 @@ public interface IVehiculoRepository  extends JpaRepository<Vehiculo,Integer> {
     @Query("from Vehiculo v where v.cliente.ncliente like %:ncliente%")
     List<Vehiculo> buscarCliente(@Param("ncliente") String ncliente);
 
+    @Query(value = "select v.cplaca, u.ncliente, u.tcorreo from cliente as u inner join vehiculo v on v.id_cliente = u.ccliente", nativeQuery = true)
+    List<String[]>placaCliente();
 }

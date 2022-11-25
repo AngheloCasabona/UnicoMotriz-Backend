@@ -39,4 +39,9 @@ public class ClienteController {
     public Optional<Cliente> listId(@PathVariable("id") Integer id) {
         return cService.listId(id);
     }
+
+    @GetMapping("/fuerzacodigo")
+    public List<Cliente> fuerzaCodigo() throws ParseException {
+        return cService.fuerzaCodigo();
+    }
 }
