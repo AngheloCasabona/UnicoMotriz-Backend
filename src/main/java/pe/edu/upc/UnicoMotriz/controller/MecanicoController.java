@@ -21,17 +21,17 @@ public class MecanicoController {
     @GetMapping
     public List<Mecanico> list() {return mService.list();}
 
-    @PutMapping
+    @PutMapping("/{id}")
     public void modify(@RequestBody Mecanico m){mService.insert(m);}
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id){mService.delete(id);}
 
     @PostMapping("/buscar")
-    public List<Mecanico> find(@RequestBody Mecanico mr)throws ParseException{
+    public List<Mecanico> find(@RequestBody Mecanico m)throws ParseException{
         List<Mecanico> listMecanicos;
-        mr.setNMecanico(mr.getNMecanico());
-        listMecanicos = mService.findName(mr.getNMecanico());
+        m.setNmecanico(m.getNmecanico());
+        listMecanicos = mService.buscarMecanico(m.getNmecanico());
         return listMecanicos;
     }
     @GetMapping("/{id}")
