@@ -16,71 +16,120 @@ public class Mecanico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CMecanico")
-    private int CMecanico;
-    @Column(name = "NMecanico", length = 50, nullable = false)
-    private String NMecanico;
-    @Column(name = "TCorreo", length = 50, nullable = false)
-    private String TCorreo;
-    @Column(name = "TClave", length = 50, nullable = false)
-    private String TClave;
+    @Column(name = "cmecanico")
+    private int cmecanico;
+    @Column(name = "nmecanico", length = 50, nullable = false)
+    private String nmecanico;
+    @Column(name = "tcorreo", length = 50, nullable = false)
+    private String tcorreo;
+    @Column(name = "tclave", length = 50, nullable = false)
+    private String tclave;
 
     @ManyToOne
 
     @JoinColumn(name = "ctaller", nullable = false)
-    private Taller ctaller;
+    private Taller taller;
+    /* private Taller ctaller;*/
 
 
-
-    public Mecanico(int CMecanico, String NMecanico, String TCorreo, String TClave, Taller ctaller) {
-        this.CMecanico = CMecanico;
-        this.NMecanico = NMecanico;
-        this.TCorreo = TCorreo;
-        this.TClave = TClave;
-        this.ctaller = ctaller;
-    }
     public Mecanico() {
         super();
-        // TODO Auto-generated constructor stub
-
-    }
-    public int getCMecanico() {
-        return CMecanico;
     }
 
-    public void setCMecanico(int CMecanico) {
-        this.CMecanico = CMecanico;
+    public Mecanico(int cmecanico, String nmecanico, String tcorreo, String tclave, Taller taller) {
+        this.cmecanico = cmecanico;
+        this.nmecanico = nmecanico;
+        this.tcorreo = tcorreo;
+        this.tclave = tclave;
+        this.taller = taller;
     }
 
-    public String getNMecanico() {
-        return NMecanico;
+    public int getCmecanico() {
+        return cmecanico;
     }
 
-    public void setNMecanico(String NMecanico) {
-        this.NMecanico = NMecanico;
+    public void setCmecanico(int cmecanico) {
+        this.cmecanico = cmecanico;
     }
 
-    public String getTCorreo() {
-        return TCorreo;
+    public String getNmecanico() {
+        return nmecanico;
     }
 
-    public void setTCorreo(String TCorreo) {
-        this.TCorreo = TCorreo;
+    public void setNmecanico(String nmecanico) {
+        this.nmecanico = nmecanico;
     }
 
-    public String getTClave() {
-        return TClave;
+    public String getTcorreo() {
+        return tcorreo;
     }
 
-    public void setTClave(String TClave) {
-        this.TClave = TClave;
+    public void setTcorreo(String tcorreo) {
+        this.tcorreo = tcorreo;
+    }
+
+    public String getTclave() {
+        return tclave;
+    }
+
+    public void setTclave(String tclave) {
+        this.tclave = tclave;
     }
 
     public Taller getTaller() {
+        return taller;
+    }
+
+    public void setTaller(Taller taller) {
+        this.taller = taller;
+    }
+}
+/*
+    public Mecanico(int cmecanico, String nmecanico, String tcorreo, String tclave, Taller ctaller) {
+        this.cmecanico = cmecanico;
+        this.nmecanico = nmecanico;
+        this.tcorreo = tcorreo;
+        this.tclave = tclave;
+        this.ctaller = ctaller;
+    }
+
+    public int getCmecanico() {
+        return cmecanico;
+    }
+
+    public void setCmecanico(int cmecanico) {
+        this.cmecanico = cmecanico;
+    }
+
+    public String getNmecanico() {
+        return nmecanico;
+    }
+
+    public void setNmecanico(String nmecanico) {
+        this.nmecanico = nmecanico;
+    }
+
+    public String getTcorreo() {
+        return tcorreo;
+    }
+
+    public void setTcorreo(String tcorreo) {
+        this.tcorreo = tcorreo;
+    }
+
+    public String getTclave() {
+        return tclave;
+    }
+
+    public void setTclave(String tclave) {
+        this.tclave = tclave;
+    }
+
+    public Taller getCtaller() {
         return ctaller;
     }
 
-    public void setTaller(Taller ctaller) {
+    public void setCtaller(Taller ctaller) {
         this.ctaller = ctaller;
     }
-}
+}*/
