@@ -34,4 +34,8 @@ public class FacturaServiceImpl implements IFacturaService {
         return fR.findFactura(cfactura);
     }
 
+    @Override
+    public List<Factura>buscarFacturaFecha(){
+        return fR.buscarFacturaFecha();
+    }
 }

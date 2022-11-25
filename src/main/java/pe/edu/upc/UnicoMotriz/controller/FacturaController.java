@@ -41,6 +41,8 @@ public class FacturaController {
         return fService.listId(id);
     }
 
- //   @PostMapping("/buscarfecha") //Probar con String sino cambiar a LocalDate
-   // public List<Factura> buscarFecha(@RequestBody String fecha) { return fService.buscarFecha(fecha);}
+    @GetMapping("/buscarfacturafecha")
+    public List<Factura> buscarFacturaFecha(){
+        return fService.buscarFacturaFecha();
+    }
 }

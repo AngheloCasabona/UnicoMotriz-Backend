@@ -17,10 +17,6 @@ public interface IDetalleVentaService {
 
     List<DetalleVenta>findCliente(String cliente);
 
-  /*  List<DetalleVenta>buscarClientenombre(String ncliente);
-
-    List<DetalleVenta>findTaller(String ntaller);
-
-    List<DetalleVenta>findFactura(int cfactura);*/
+    List<DetalleVenta>buscarClienteDetalle();
 
 }

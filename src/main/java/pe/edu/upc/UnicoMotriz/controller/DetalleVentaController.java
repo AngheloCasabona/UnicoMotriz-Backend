@@ -40,8 +40,9 @@ public class DetalleVentaController {
     @GetMapping("/{id}")
     public Optional <DetalleVenta> listId(@PathVariable("id")Integer id){return dvService.listId(id);}
 
-  /*  @PostMapping("/buscarcliente")
-    public List<DetalleVenta> buscarCliente(@RequestBody String nombre) throws ParseException {
-        return dvService.buscarClientenombre(nombre);
-    }*/
+    @GetMapping("/buscarclientedetalle")
+    public List<DetalleVenta> buscarClienteDetalle(){
+        return dvService.buscarClienteDetalle();
+
+    }
 }

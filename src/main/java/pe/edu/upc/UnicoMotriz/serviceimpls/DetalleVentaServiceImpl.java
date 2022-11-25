@@ -42,14 +42,7 @@ public class DetalleVentaServiceImpl implements IDetalleVentaService{
 
     @Override
     public List<DetalleVenta>findCliente(String cliente){return dvR.findCliente(cliente);}
-  /*  @Override
-    public List<DetalleVenta>buscarClientenombre(String ncliente){return dvR.findCliente(ncliente);}
-   @Override
-    public List<DetalleVenta>findTaller(String ntaller){
-        return dvR.findTaller(ntaller);
-  }
+
     @Override
-    public List<DetalleVenta>findFactura(int cfactura){
-        return dvR.findFactura(cfactura);
-    }*/
+    public List<DetalleVenta>buscarClienteDetalle(){ return dvR.buscarClienteDetalle();}
 }

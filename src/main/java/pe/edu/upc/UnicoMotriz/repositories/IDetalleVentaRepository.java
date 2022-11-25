@@ -15,12 +15,8 @@ public interface IDetalleVentaRepository extends JpaRepository<DetalleVenta,Inte
     @Query("from DetalleVenta dv where dv.cliente.ncliente like %:ncliente%")
     List<DetalleVenta> findCliente(@Param("ncliente") String ncliente);
 
-  /*  @Query("from DetalleVenta dv where dv.cliente.ncliente like %:ncliente%")
-    List<DetalleVenta> findCliente(@Param("ncliente")String ncliente);
-
-    @Query("from DetalleVenta dv where dv.taller.ntaller like %:ntaller%")
-    List<DetalleVenta> findTaller(@Param("ntaller")String ntaller);
-
-    @Query("from DetalleVenta dv where dv.cfactura in :cfactura")
-    List<DetalleVenta> findFactura(@Param("cfactura")int cfactura);*/
+    //@Query(value = "select cl.ccliente, cl.ttelefono, cl.tcorreo, d.tdetalle from cliente as cl inner join detalle_venta as d on d.cliente = cl.ccliente",nativeQuery = true)
+    //List<DetalleVenta>buscarClienteDetalle();
+    @Query(value = "select * from detalle_venta d where d.ccliente = '1' order by d.ctaller asc",nativeQuery = true)
+    List<DetalleVenta>buscarClienteDetalle();
 }

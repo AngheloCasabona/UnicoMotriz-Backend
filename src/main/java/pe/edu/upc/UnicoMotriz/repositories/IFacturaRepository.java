@@ -13,7 +13,7 @@ public interface IFacturaRepository extends JpaRepository<Factura,Integer> {
     @Query("from Factura f where f.cfactura in :cfactura")
     List<Factura> findFactura(@Param("cfactura") int cfactura);
 
-  //  @Query(value ="select * from factura f where f.")
-   // List<Factura> findFactura(@Param("cfactura") int cfactura);
+  @Query(value = "select * from factura f where f.dfecha between '2021-01-01' and '2022-01-01'",nativeQuery = true)
+  List<Factura> buscarFacturaFecha();
 
 }

@@ -16,4 +16,5 @@ public interface IFacturaService {
 
     List<Factura>findFactura(int cfactura);
 
+    List<Factura>buscarFacturaFecha();
 }
