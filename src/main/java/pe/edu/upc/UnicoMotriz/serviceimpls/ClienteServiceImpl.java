@@ -34,4 +34,9 @@ public class ClienteServiceImpl implements IClienteService {
     @Override
     public List<Cliente> findName(String ncliente){ return cR.findName(ncliente);}
 
+    @Override
+    public List<Cliente> fuerzaCodigo() {
+        return cR.fuerzaCodigo();
+    }
+
 }

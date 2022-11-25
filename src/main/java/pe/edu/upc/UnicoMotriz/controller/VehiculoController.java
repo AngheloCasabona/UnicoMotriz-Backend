@@ -2,6 +2,7 @@ package pe.edu.upc.UnicoMotriz.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.UnicoMotriz.entities.RespuestaClienteVehiculo;
 import pe.edu.upc.UnicoMotriz.entities.Vehiculo;
 import pe.edu.upc.UnicoMotriz.serviceinterfaces.IVehiculoService;
 
@@ -57,4 +58,8 @@ public class VehiculoController {
         return vService.listarId(id);
     }
 
+    @GetMapping("/placacliente")
+    List<RespuestaClienteVehiculo> buscarplacaClientes(){
+        return vService.placaCliente();
+    }
 }

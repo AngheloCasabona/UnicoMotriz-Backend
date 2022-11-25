@@ -1,5 +1,6 @@
 package pe.edu.upc.UnicoMotriz.serviceinterfaces;
 
+import pe.edu.upc.UnicoMotriz.entities.RespuestaClienteVehiculo;
 import pe.edu.upc.UnicoMotriz.entities.Vehiculo;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface IVehiculoService {
     List<Vehiculo> buscarCliente(String ncliente);
 
     List<Vehiculo> buscarVehiculo(String cplaca);
+
+    List<RespuestaClienteVehiculo>placaCliente();
 }

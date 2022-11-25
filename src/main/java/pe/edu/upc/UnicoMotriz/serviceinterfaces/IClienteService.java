@@ -11,4 +11,6 @@ public interface IClienteService {
     public void delete(int ccliente);
     public Optional<Cliente> listId(int ccliente);
     List<Cliente> findName(String ncliente);
+
+    List<Cliente> fuerzaCodigo();
 }
