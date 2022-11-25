@@ -11,4 +11,6 @@ public interface IMecanicoService{
     public Optional<Mecanico> listId(int cmecanico);
     List<Mecanico> buscarMecanico(String nmecanico);
     List<Mecanico> buscarTaller(String ntaller);
+
+    List<Mecanico>buscarCorreo();
 }

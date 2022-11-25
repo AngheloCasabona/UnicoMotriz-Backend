@@ -38,4 +38,10 @@ public class TallerController {
     public Optional<Taller> listId(@PathVariable("id") Integer id) {
         return tService.listId(id);
     }
+
+    @GetMapping("/buscardireccion")
+    public List<Taller>buscarDireccion(){
+        return tService.buscarDireccion();
+    }
+
 }

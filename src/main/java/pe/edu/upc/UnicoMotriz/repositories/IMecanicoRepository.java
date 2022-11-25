@@ -15,4 +15,8 @@ public interface IMecanicoRepository extends JpaRepository<Mecanico,Integer> {
 
     @Query("from Mecanico m where m.taller.ntaller like %:ntaller%")
     List<Mecanico>buscarTaller(@Param("ntaller")String ntaller);
+
+
+    @Query(value = "select m.tcorreo from mecanico m",nativeQuery = true)
+List<Mecanico>buscarCorreo();
 }

@@ -39,4 +39,8 @@ public class MecanicoController {
         return mService.listId(id);
     }
 
+    @GetMapping("/buscarcorreo")
+    public List<Mecanico>buscarCorreo(){
+        return mService.buscarCorreo();
+    }
 }

@@ -13,4 +13,8 @@ public interface ITallerRepository extends JpaRepository<Taller,Integer> {
     @Query("from Taller t where t.ntaller like %:ntaller%")
     List<Taller>findName(@Param("ntaller") String ntaller);
 
+
+
+    @Query (value = "select * from taller t where t.tdireccion between 'Lima-Mz-Taller' and 'Lima5-Mz-Taller'", nativeQuery =true )
+    List<Taller> buscarDireccion();
 }

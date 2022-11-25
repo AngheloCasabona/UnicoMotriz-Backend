@@ -14,5 +14,6 @@ public interface ITallerService {
     public void delete(int ctaller);
 
     List<Taller>findName(String ntaller);
+    List<Taller>buscarDireccion();
 
 }

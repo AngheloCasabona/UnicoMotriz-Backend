@@ -42,4 +42,7 @@ public class MecanicoServiceImpl implements IMecanicoService {
     public List<Mecanico> buscarMecanico(String nmecanico){ return mR.buscarMecanico(nmecanico);}
     @Override
     public List<Mecanico> buscarTaller(String ntaller){ return mR.buscarTaller(ntaller);}
+@Override
+    public List<Mecanico>buscarCorreo(){return mR.buscarCorreo();}
+
 }

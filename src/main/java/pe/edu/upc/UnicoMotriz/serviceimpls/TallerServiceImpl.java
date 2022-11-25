@@ -34,4 +34,6 @@ public class TallerServiceImpl implements ITallerService {
         return tR.findName(ntaller);
     }
 
+    @Override
+    public List<Taller>buscarDireccion(){return tR.buscarDireccion();}
 }
